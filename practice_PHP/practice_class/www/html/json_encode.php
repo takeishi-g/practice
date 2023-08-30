@@ -1,12 +1,4 @@
 <?php
-// require_once dirname(__FILE__).'/numPrint.php';
-// require_once dirname(__FILE__).'/post.php';
-require_once dirname(__FILE__).'/encapsulation.php';
-require_once dirname(__FILE__) . '/famiry.php';
-require_once dirname(__FILE__) . '/posts.php';
-
-
-
 
 class Profile 
 {
