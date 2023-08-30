@@ -1,0 +1,19 @@
+.container {
+  width: 50%;
+  margin: 100px auto;
+}
+
+.container-inner{
+  width: 30%;
+  text-align: center;
+  margin: 0 auto;
+  
+}
+
+.member {
+  text-align: start;
+  margin-bottom: 20px;
+  background-color: #d4f6e8;
+  padding: 20px;
+  border-radius: 20px;
+}
