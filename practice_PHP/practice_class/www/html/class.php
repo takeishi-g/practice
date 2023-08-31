@@ -26,7 +26,4 @@ $taro->japanese = 74;
 // TestScoreのメソッド使用して出力する
 $taro->printScore($taro->name, $taro->math, $taro->english, $taro->japanese);
 
-
-
-
 ?>
