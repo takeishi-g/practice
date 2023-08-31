@@ -26,4 +26,11 @@ $taro->japanese = 74;
 // TestScoreのメソッド使用して出力する
 $taro->printScore($taro->name, $taro->math, $taro->english, $taro->japanese);
 
+echo $taro->name.PHP_EOL;
+echo $taro->math.PHP_EOL;
+echo $taro->english.PHP_EOL;
+echo $taro->japanese.PHP_EOL;
+
+
+
 ?>
