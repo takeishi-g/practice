@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/about', function () {
+    return('このブログについて');
+});
+
+Route::get('/posts{id}', function($id){
+    return '<h1>' . $id . '番目の記事</h1>';
+});
