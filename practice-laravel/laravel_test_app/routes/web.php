@@ -18,9 +18,10 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-    return('このブログについて');
+    // return('このブログについて');
+    return view('about');
 });
 
-Route::get('/posts{id}', function($id){
-    return '<h1>' . $id . '番目の記事</h1>';
+Route::get('/posts/{id}', function($id){
+    return view('post',['id' => $id]);
 });
