@@ -7,6 +7,6 @@
 </head>
 <body>
   <h1>{{ $id }}番目の記事です</h1>
-  <p>日付: {{ date('Y-m-d') }}</p>
+  <p>日付: {{ $today }}</p>
 </body>
 </html>
