@@ -3,17 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\Post;
+
 
 class PostsContoroller extends Controller
 {
+    public function index() {
+        $posts = Post::all();
+        return view('posts.index', ['posts'=>$posts]);
+    }
+
+
     //
     public function show($id){
         $today = date('Y-m-d');
 
-        $posts = DB::select('select * from posts where id=1');
-        $post = $posts[0];
+       $post = Post::find($id);
         
         return view('posts.post', ['post' => $post, 'today' => $today]);
     }
+
+
 }
