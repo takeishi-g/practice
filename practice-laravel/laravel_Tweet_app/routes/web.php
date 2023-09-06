@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\PostsContoroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,12 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PostsContoroller::class, 'index']);
-
-Route::get('/about', function () {
-    // return('このブログについて');
-    return view('about');
+Route::get('/', function () {
+    return view('welcome');
 });
-
-Route::get('/posts/{id}', [PostsContoroller::class, 'show']
-);
