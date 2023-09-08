@@ -18,6 +18,12 @@
     <article>
       <div>
         <h1>投稿一覧</h1>
+        @if (session('flash_message'))
+          <p>{{ session('flash_message') }}</p>
+        @endif
+        <div>
+          <a href="{{ route('posts.create') }}">新規投稿</a>
+        </div>
       </div>
     </article>
 
