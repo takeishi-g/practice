@@ -10,7 +10,8 @@ class PostController extends Controller
 {
     //
     public function index() {
-        return view('posts.index');
+        $posts = Post::latest()->get();
+        return view('posts.index', compact('posts'));
     }
 
     public function create() {
@@ -24,5 +25,9 @@ class PostController extends Controller
         $post->save();
 
         return redirect()->route('posts.index')->with('flash_message', '投稿が完了しました。');
+    }
+
+    public function show(Post $post) {
+        return view('posts.show', compact('post'));
     }
 }
