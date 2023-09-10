@@ -19,6 +19,9 @@
     <article>
       <div>
         <h1>投稿詳細</h1>
+        @if (session('flash_message'))
+            <p>{{ session('flash_message') }}</p>
+        @endif
         <div>
           <a href="{{ route('posts.index') }}">&lt; 戻る</a>
         </div>
@@ -26,6 +29,15 @@
           <div>
             <h2>{{ $post->title }}</h2>
             <p>{{ $post->content }}</p>
+            <div>
+              <a href="{{ route('posts.edit', $post) }}">編集</a>
+              
+              <form action="{{ route('posts.destroy', $post)}}" method="POST">
+                @csrf
+                @method('delete')
+                <button type="submit">削除</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
