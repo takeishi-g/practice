@@ -1,14 +1,31 @@
-<!DOCTYPE html>
+@extends('layouts.app')
 
-<html lang="ja">
+@section('title', '新規投稿')
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
-</html>
+@section('content')
+
+@if ($errors->any())
+<div class="alert alert-danger">
+  <ul>
+    @foreach ($errors->all() as $error)
+    <li>{{ $error }}</li>
+    @endforeach
+  </ul>
+</div>
+@endif
+<div class="mb-2">
+  <a href="{{ route('posts.index') }}" class="text-decoration-none">&lt; 戻る</a>
+</div>
+<form action="{{ route('posts.store') }}" method="POST">
+  @csrf
+  <div class="form-group mb-3">
+    <label for="title">タイトル</label>
+    <input type="text" name="title" value="{{ old('title')}}" class="form-control">
+  </div>
+  <div class="form-group mb-3">
+    <label for="content">本文</label>
+    <textarea name="content" class="form-control">{{ old('content') }}</textarea>
+  </div>
+  <button type="submit" class="btn btn-outline-primary">投稿</button>
+</form>
+@endsection
