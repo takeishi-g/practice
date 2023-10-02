@@ -13,10 +13,17 @@
     @endif
 
     @include('modals.add_goal')
+
+    @include('modals.add_tag')
     <div class="d-flex mb-3">
       <a href="#" class="link-dark text-decoration-none" data-bs-toggle="modal" data-bs-target="#addGoalModal">
         <div class="d-flex algin-items-center">
           <span class="fs-5 fw-bold">+</span>&nbsp;目標の追加
+        </div>
+      </a>
+      <a href="#" class="ms-4 link-dark text-decoration-none" data-bs-toggle="modal" data-bs-target="#addTagModal">
+        <div class="d-flex algin-items-center">
+          <span class="fs-5 fw-bold">+</span>&nbsp;タグの追加
         </div>
       </a>
     </div>
